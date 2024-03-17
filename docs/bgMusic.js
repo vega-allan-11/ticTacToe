@@ -25,6 +25,9 @@ export function noMutedMusic() {
 //to pause the music
 export function stopAudio() {
     mainAudio.pause();
+    if(iconAudio.classList.contains('fa-volume-high')) {
+        changeAudioIcon();
+    }
 }
 
 //to change the volume of the music
@@ -34,8 +37,6 @@ export function setVolume() {
 
 //to change the icon when you press in it and to reproduce its selected music
 export function changeAudioIcon() {
-    const iconAudio = document.getElementById('iconAudio');
-
     //verify is the icon is muted or not
     if (iconAudio.classList.contains('fa-volume-xmark')) {
         iconAudio.classList.remove('fa-volume-xmark');
@@ -53,6 +54,9 @@ export function changeAudioIcon() {
 /*
 ELEMENTS
 */
+
+//this is the icon audio
+const iconAudio = document.getElementById('iconAudio');
 
 //this is the audio tag that is in the html doc
 export const mainAudio = document.getElementById('mainAudio');
